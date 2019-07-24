@@ -1,23 +1,23 @@
 import { expect } from 'chai';
 import {Injector} from "../src/Injector";
-import {Service} from "../src/ServiceDecorator";
+import {Inject} from "../src/inject_decorator";
 
 // Fixtures
-@Service()
+@Inject()
 export class Foo {
 }
 
-@Service()
+@Inject()
 export class Bar {
 }
 
-@Service()
+@Inject()
 export class Foobar {
   constructor(public foo: Foo, public bar: Bar) {
   }
 }
 
-@Service()
+@Inject()
 export class Baz {
   constructor(public foobar: Foobar) {
   }
